@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duncan Law - Portfolio</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="description" content="Duncan Law's Portfolio - Software Engineer specializing in Game Development, Machine Learning and Web Development">
+    <meta name="keywords" content="Duncan Law, Software Engineer, Game Development, Machine Learning, Portfolio">
+    <meta name="author" content="Duncan Law">
+
     <style>
         * {
             margin: 0;
@@ -19,6 +27,7 @@
             padding: 50px 20px;
             overflow-x: hidden;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            scroll-padding-top: 60px; /* Add this to account for fixed navbar */
         }
 
         :root {
@@ -81,6 +90,7 @@
             text-align: center;
             margin-bottom: 30px;
             animation: fadeIn 1.2s ease-in-out;
+            padding-top: 60px; /* Add this to prevent content from hiding under navbar */
         }
 
         .main-header h1 {
@@ -371,6 +381,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 60px; /* Add fixed height */
         }
 
         .nav-links {
@@ -701,6 +712,105 @@
             from, to { border-color: transparent }
             50% { border-color: #3b82f6; }
         }
+
+        .location-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .location-badge:hover {
+            transform: translateY(-2px);
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .location-badge span {
+            font-size: 1em;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        body.light-mode .location-badge {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category li a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .skill-category li a:hover {
+            color: #60a5fa;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+
+        .typing-text {
+            font-size: 3.5em;
+            line-height: 1.1;
+            color: #bbf7d0;
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0;
+            animation: typing 3.5s steps(40, end),
+                       blink-caret .75s step-end infinite;
+        }
+
+        .contact-intro {
+            color: #93c5fd;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .typing-text {
+                font-size: 2em;
+            }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -709,10 +819,13 @@
 
     <nav class="navbar">
         <div class="nav-links">
+            <a href="#about">About Me</a>
             <a href="#projects">GitHub Projects</a>
             <a href="#achievements">Awards & Achievements</a>
+            <a href="#experience">Experience</a>
             <a href="#education">Education</a>
             <a href="#skills">Skills</a>
+            <a href="#language">Language Proficiency</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -727,22 +840,29 @@
 
     <div class="container">
         <div class="main-header">
-            <h1>Duncan Law</h1>
-            <div class="icons">
-                <a href="https://www.linkedin.com/in/duncan-l400" target="_blank">
-                    <img src="linkedin-icon.png" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/dundd2" target="_blank">
-                    <img src="github-icon.png" alt="GitHub">
-                </a>
+            <div class="header-content">
+                <div class="profile-section">
+                    <img src="profile-pic.jpg" alt="Duncan Law" class="profile-pic">
+                    <h1 class="typing-text">Hey 👋, it's Duncan Law</h1>
+                </div>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/duncan-l400" target="_blank">
+                        <img src="linkedin-icon.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/dundd2" target="_blank">
+                        <img src="github-icon.png" alt="GitHub">
+                    </a>
+                </div>
+                <div class="location-badge">
+                    <span>📍 Brighton, UK 🇬🇧 </span>
+                </div>
             </div>
         </div>
 
         <div class="about-me" id="about">
-            <p>Computing for Digital Media and Games student at the University of Sussex with demonstrated expertise in game development, machine learning, and multimedia production.</p>
-            <p>Award winner for creative machine learning solutions with hands-on experience in game capture technology.</p>
-            <p>Multilingual professional combining technical proficiency in multiple programming languages with practical experience in game design and video production.</p>
-        </div>
+    <p>From developing an award-winning machine learning solution to capturing the essence of gameplay for marketing trailers, I thrive at the intersection of technology and creative expression. My journey in computing began with a fascination for game development, which has evolved into a comprehensive skill set spanning artificial intelligence, multimedia production, and software engineering.</p>
+    <p> I'm particularly drawn to projects that challenge conventional boundaries and require innovative solutions, as demonstrated by my work in game development and machine learning applications.</p>
+</div>
 
         <h2 style="text-align: center; margin: 40px 0;" id="projects">GitHub Project</h2>
         <div class="projects">
@@ -792,6 +912,14 @@
                 <h3><a href="https://github.com/dundd2/Y2-Video-Production-Techniques-Assignment-1" target="_blank">Video Production Techniques</a></h3>
                 <p>Showcase of photography and video production skills demonstrating narrative structure and editing proficiency.</p>
             </div>
+            <div class="project-card">
+                <h3><a href="https://github.com/dundd2/IFY-Website-Design-and-Development-Homework-2023-akibTsuu-Film-Productions" target="_blank">akibTsuu Film Productions</a></h3>
+                <p>A responsive film production website showcasing web development skills, utilizing HTML5, CSS3, and JavaScript for interactive features and user engagement.</p>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://github.com/dundd2/WIP-Fruit-Basket-Sorter-Game" target="_blank">Fruit Basket Sorter Game</a></h3>
+                <p>A captivating C++ SDL2-based game featuring multiple modes, achievements, power-ups, modern UI, robust state management, player profiles, and leaderboards.</p>
+            </div>
         </div>
 
         <div class="achievements-section" id="achievements">
@@ -807,24 +935,193 @@
             </div>
         </div>
 
-        <div class="education-section" id="education">
-            <h2>Education</h2>
-            <div class="timeline-item">
-                <h3>University of Sussex</h3>
-                <p>Computing for Digital Media and Games BSc (Hons)</p>
-                <p>2023 - Present</p>
+        <div class="experience-section" id="experience">
+    <h2>Professional Experience</h2>
+    <div class="experience-card">
+        <div class="experience-header">
+            <div class="company-info">
+                <h3>Trailer Farm Game Capture Technician</h3>
+                <span class="job-type">Freelance</span>
             </div>
-            <div class="timeline-item">
-                <h3>Humboldt University of Berlin</h3>
-                <p>Nazi Germany Rise and Fall Program</p>
-                <p>June 2024 - July 2024</p>
-            </div>
-            <div class="timeline-item">
-                <h3>University of Sussex International Study Centre</h3>
-                <p>International Foundation Year Science and Engineering</p>
-                <p>2022 - 2023</p>
+            <div class="experience-meta">
+                <div class="duration">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>June - July 2024</span>
+                </div>
+                <div class="location-tag">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>🇬🇧 Brighton, UK</span>
+                </div>
             </div>
         </div>
+        <div class="experience-details">
+            <div class="responsibility">
+                <p>📹 Captured and processed 20+ hours of gameplay footage</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .experience-card {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 15px 0;
+        border-left: 4px solid #3b82f6;
+        transition: all 0.3s ease;
+        transform-origin: left;
+    }
+
+    .experience-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .company-info {
+        flex: 1;
+    }
+
+    .job-type {
+        display: inline-block;
+        background: rgba(59, 130, 246, 0.2);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.9em;
+        margin-left: 10px;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .experience-meta {
+        display: flex;
+        gap: 15px;
+        font-size: 0.9em;
+        color: #a6a6a7;
+    }
+
+    .duration, .location-tag {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(59, 130, 246, 0.1);
+        padding: 4px 12px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .duration:hover, .location-tag:hover {
+        background: rgba(59, 130, 246, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .experience-details {
+        margin-top: 15px;
+        padding-left: 10px;
+    }
+
+    .responsibility p {
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .responsibility p:hover {
+        transform: translateX(10px);
+    }
+
+    @media (max-width: 768px) {
+        .experience-header {
+            flex-direction: column;
+        }
+        
+        .experience-meta {
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+</style>
+
+        <div class="education-section" id="education">
+    <h2>Education</h2>
+    <div class="timeline-item">
+        <div class="education-header">
+            <h3>University of Sussex</h3>
+            <div class="location-tag">
+                <span>🇬🇧 Brighton, United Kingdom</span>
+            </div>
+        </div>
+        <p>Computing for Digital Media and Games BSc (Hons)</p>
+        <p>Sep 2023 - Present</p>
+    </div>
+    <div class="timeline-item">
+        <div class="education-header">
+            <h3>Humboldt University of Berlin</h3>
+            <div class="location-tag">
+                <span>🇩🇪 Berlin, Germany</span>
+            </div>
+        </div>
+        <p>Nazi Germany Rise and Fall Program</p>
+        <p>June 2024 - July 2024</p>
+    </div>
+    <div class="timeline-item">
+        <div class="education-header">
+            <h3>University of Sussex International Study Centre</h3>
+            <div class="location-tag">
+                <span>🇬🇧 Brighton, United Kingdom</span>
+            </div>
+        </div>
+        <p>International Foundation Year Science and Engineering</p>
+        <p>Sep 2022 - May 2023</p>
+    </div>
+</div>
+
+<style>
+    .education-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    .location-tag {
+        background: rgba(59, 130, 246, 0.15);
+        padding: 4px 12px;
+        border-radius: 16px;
+        font-size: 0.9em;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+    }
+
+    .location-tag:hover {
+        background: rgba(59, 130, 246, 0.25);
+        transform: translateY(-2px);
+    }
+
+    .timeline-item {
+        /* ...existing timeline-item styles... */
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        .education-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+    }
+</style>
 
         <div class="skills" id="skills">
             <h2>Technical Skills</h2>
@@ -832,12 +1129,13 @@
                 <div class="skill-category">
                     <h3>Programming Languages</h3>
                     <ul>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>C#</li>
-                        <li>JavaScript</li>
+                        <li><a href="https://github.com/dundd2/IFY-Computing-Project-HW-2023-TokiPonaSpellChecker" target="_blank">Java</a></li>
+                        <li><a href="https://github.com/dundd2/Train-Color-Matcher" target="_blank">Python</a></li>
+                        <li><a href="https://github.com/dundd2/Y2-Game-Development-Project1-Fall-Guin" target="_blank">C#</a></li>
+                        <li><a href="https://github.com/dundd2/IFY-Website-Design-and-Development-Homework-2023-akibTsuu-Film-Productions" target="_blank">JavaScript</a></li>
                         <li>SQL</li>
-                        <li>Rust</li>
+                        <li><a href="https://github.com/dundd2/WIP-Racing-Dashboard" target="_blank">Rust</a></li>
+                        <li><a href="https://github.com/dundd2/WIP-Fruit-Basket-Sorter-Game" target="_blank">C++</a></li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -859,6 +1157,11 @@
                         <li>SQLite</li>
                         <li>Adobe Creative Suite</li>
                         <li>PyGame</li>
+                        <li>Adobe XD</li>
+                        <li>GitHub</li>
+                        <li>GitHub Copilot</li>
+                        <li>Microsoft Office</li>
+                        <li>SQL Server</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -922,7 +1225,7 @@
             }
         </style>
 
-        <div class="language-section">
+        <div class="language-section" id="language">
             <h2>Language Proficiency</h2>
             <div class="language-card">
                 <h3>English</h3>
@@ -945,14 +1248,86 @@
         </div>
 
         <div class="contact-section" id="contact">
-            <h2>Contact Me</h2>
-            <p>For inquiries or collaborations, feel free to reach out!</p>
-            <a href="mailto:dunddatuk@gmail.com" class="contact-btn">Email Me</a>
-            <a href="https://www.linkedin.com/in/duncan-l400" class="contact-btn">LinkedIn</a>
+            <h2>Contact & Social</h2>
+            <p class="contact-intro">For inquiries or collaborations, feel free to reach out!</p>
+            <div class="formkit-collection-container">
+                <div class="formkit-links">
+                    <div class="link-collection grid gap-8 md:grid-cols-2">
+                        <div class="relative">
+                            <a href="https://github.com/dundd2" class="contact-link" target="_blank" rel="noreferrer noopener">
+                                <div class="icon-wrapper">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="social-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                                        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"></path>
+                                    </svg>
+                                </div>
+                                <span>See my GitHub</span>
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <a href="https://www.linkedin.com/in/duncan-l400" class="contact-link" target="_blank" rel="noreferrer noopener">
+                                <div class="icon-wrapper">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="social-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                                    </svg>
+                                </div>
+                                <span>Connect on LinkedIn</span>
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <a href="mailto:dunddatuk@gmail.com" class="contact-link">
+                                <div class="icon-wrapper">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="social-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+                                    </svg>
+                                </div>
+                                <span>Email Me</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <style>
+            .contact-link {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+                background-color: rgba(32, 33, 37, 0.8);
+                border-radius: 10px;
+                color: #a6a6a7;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                margin: 10px;
+                min-height: 83px;
+            }
+
+            .contact-link:hover {
+                transform: translateY(-5px);
+                background-color: rgba(59, 130, 246, 0.2);
+            }
+
+            .icon-wrapper {
+                padding: 1rem;
+                margin-right: 1rem;
+            }
+
+            .social-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            .link-collection {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+                padding: 1rem;
+            }
+        </style>
 
         <div class="footer">
             <p>&copy; 2024 Duncan Law. All rights reserved.</p>
+            <p>This website was created from scratch in VSCode without using any templates.</p>
         </div>
     </div>
 
@@ -1014,11 +1389,21 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // 移除以下主題相關的程式碼
-        /*const theme = localStorage.getItem('theme') || 'dark';
-        if (theme === 'light') {
-            document.body.classList.add('light-mode');
-        }*/
+        // Add this after the existing scripts
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const element = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 70;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            });
+        });
 
         particlesJS("particles-js", {
             particles: {
@@ -1108,4 +1493,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
