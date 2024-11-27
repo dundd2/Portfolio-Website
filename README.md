@@ -44,7 +44,7 @@ This portfolio website serves as a digital representation of my capabilities and
 - JavaScript functionality:
   - Intersection Observer for scroll animations
   - Dynamic theme switching with local storage
-  - Particle.js integration
+  - Particle.js integration: Created custom particle effects for the background
   - Mouse movement tracking for 3D effects
 - Responsive Design:
   - Mobile-first approach
@@ -77,16 +77,22 @@ This portfolio website serves as a digital representation of my capabilities and
 - Smooth scrolling implementation
 - Resource preloading for critical assets
 
-## Browser Compatibility
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
 ## Contact
 - Email: dunddatuk@gmail.com
 - LinkedIn: https://www.linkedin.com/in/duncan-l400
 - GitHub: https://github.com/dundd2
+
+## Credits
+- Particle.js by Vincent Garreau: [GitHub Repository](https://github.com/VincentGarreau/particles.js)
+
+### particles.js
+- **Author**: Vincent Garreau
+- **Repository**: [VincentGarreau/particles.js](https://github.com/VincentGarreau/particles.js)
+- **Version**: 2.0.0
+- **License**: MIT
+- **Description**: A lightweight JavaScript library for creating particles
+- **Official Demo**: https://vincentgarreau.com/particles.js/
+- **Generator**: http://vincentgarreau.com/particles.js/
 
 ## Detailed Features
 

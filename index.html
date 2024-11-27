@@ -811,8 +811,164 @@
                 font-size: 2em;
             }
         }
+
+        /* Theme Variants */
+        .theme-cyberpunk {
+            background: linear-gradient(45deg, #ff0055, #000066);
+            color: #00ff99;
+        }
+        
+        .theme-cyberpunk .project-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #ff0055;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
+        }
+
+        .theme-nature {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: #fff;
+        }
+
+        .theme-nature .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-retro {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: #2c3e50;
+        }
+
+        .theme-retro .project-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ff6b6b;
+        }
+
+        .theme-space {
+            background: linear-gradient(to right, #000000, #434343);
+            color: #fff;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
+
+        .theme-minimal {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .theme-minimal .project-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .theme-neon {
+            background: #000;
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00de;
+        }
+
+        .theme-neon .project-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #ff00de;
+            box-shadow: 0 0 20px rgba(255, 0, 222, 0.3);
+        }
+
+        .theme-ocean {
+            background: linear-gradient(45deg, #000046, #1CB5E0);
+            color: #fff;
+        }
+
+        .theme-ocean .project-card {
+            background: rgba(28, 181, 224, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Theme-specific animations */
+        .theme-cyberpunk .project-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 0, 85, 0.5);
+        }
+
+        .theme-neon .project-card:hover {
+            animation: neonPulse 1.5s infinite;
+        }
+
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 5px #ff00de, 0 0 10px #ff00de, 0 0 20px #ff00de; }
+            50% { box-shadow: 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 40px #ff00de; }
+            100% { box-shadow: 0 0 5px #ff00de, 0 0 10px #ff00de, 0 0 20px #ff00de; }
+        }
+
+        /* Theme transition effects */
+        body {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Theme-specific button styles */
+        .theme-cyberpunk .settings-toggle {
+            background: rgba(255, 0, 85, 0.9);
+        }
+
+        .theme-neon .settings-toggle {
+            background: #ff00de;
+            box-shadow: 0 0 20px rgba(255, 0, 222, 0.5);
+        }
+
+        /* Add custom scrollbar for each theme */
+        .theme-cyberpunk::-webkit-scrollbar-thumb {
+            background: #ff0055;
+        }
+
+        .theme-neon::-webkit-scrollbar-thumb {
+            background: #ff00de;
+        }
+
+        .settings-section select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: calc(100% - 12px) center;
+            padding-right: 32px;
+        }
+
+        .settings-section select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+
+        .settings-section select option {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 8px;
+        }
+
+        .settings-section select option:hover {
+            background-color: #3b82f6;
+        }
+
+        /* Add hover effect for the select element */
+        .settings-section select:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
     </style>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./js/particles.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -834,9 +990,48 @@
         <div class="loader"></div>
     </div>
 
-    <button class="theme-toggle" onclick="toggleTheme()">
-        🌓
+    <button class="settings-toggle" aria-label="Settings">
+        <i class="settings-icon">⚙️</i>
     </button>
+
+    <div class="settings-panel">
+        <div class="settings-header">
+            <h3>Settings</h3>
+            <button class="close-settings">×</button>
+        </div>
+        <div class="settings-content">
+            <div class="settings-section">
+                <label>Theme</label>
+                <select id="theme-selector">
+                    <option value="default">Default Blue</option>
+                    <option value="cyberpunk">Cyberpunk</option>
+                    <option value="nature">Nature Vibes</option>
+                    <option value="retro">Retro Wave</option>
+                    <option value="space">Space Explorer</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="neon">Neon Dreams</option>
+                    <option value="sunset">Sunset</option>
+                    <option value="ocean">Deep Ocean</option>
+                    <option value="forest">Enchanted Forest</option>
+                </select>
+            </div>
+            <div class="settings-section">
+                <label>Dark Mode</label>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="settings-section">
+                <label>Zoom Level: <span id="zoom-value">100%</span></label>
+                <input type="range" id="zoom-control" min="80" max="120" value="100">
+            </div>
+            <div class="settings-section">
+                <label>Font Size: <span id="font-value">16px</span></label>
+                <input type="range" id="font-control" min="12" max="20" value="16">
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="main-header">
@@ -872,6 +1067,10 @@
             </div>
         </div>
         <div class="projects projects-3">
+            <div class="project-card">
+                <h3><a href="https://github.com/dundd2/Creative-Portfolio" target="_blank">Creative Portfolio</a></h3>
+                <p>A dedicated showcase of my creative works including 3D modeling, video editing, filmmaking and logo/patch design. Built with HTML,CSS, and JavaScript to demonstrate my multimedia and design capabilities.</p>
+            </div>
             <div class="project-card">
                 <h3><a href="https://github.com/dundd2/LibraManage" target="_blank">LibraManage</a></h3>
                 <p>A modern library management system featuring user authentication, book and member management, dark/light themes, animated UI elements, and SQLite database connection pooling.</p>
@@ -1110,7 +1309,6 @@
     }
 
     .timeline-item {
-        /* ...existing timeline-item styles... */
         opacity: 1;
     }
 
@@ -1327,11 +1525,154 @@
 
         <div class="footer">
             <p>&copy; 2024 Duncan Law. All rights reserved.</p>
-            <p>This website was created from scratch in VSCode without using any templates.</p>
+            <p>This website was created from scratch in VSCode.</p>
         </div>
     </div>
 
     <div class="scroll-top">↑</div>
+
+    <style>
+        .settings-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.9);
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .settings-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .settings-toggle:hover .settings-icon {
+            transform: rotate(90deg);
+        }
+
+        .settings-panel {
+            position: fixed;
+            right: -300px;
+            bottom: 80px;
+            width: 280px;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease;
+            z-index: 999;
+            backdrop-filter: blur(10px);
+        }
+
+        .settings-panel.open {
+            right: 20px;
+        }
+
+        .settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-settings {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .settings-section {
+            margin-bottom: 20px;
+        }
+
+        .settings-section label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .settings-section select,
+        .settings-section input[type="range"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Switch styles */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #3b82f6;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 
     <script>
         window.addEventListener('load', () => {
@@ -1491,6 +1832,135 @@
                 card.style.transform = `rotateX(${-angleX}deg) rotateY(${angleY}deg)`;
             });
         });
+
+        // Add this to your existing script section
+        document.addEventListener('DOMContentLoaded', () => {
+            const settingsToggle = document.querySelector('.settings-toggle');
+            const settingsPanel = document.querySelector('.settings-panel');
+            const closeSettings = document.querySelector('.close-settings');
+            const themeSelector = document.getElementById('theme-selector');
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const zoomControl = document.getElementById('zoom-control');
+            const fontControl = document.getElementById('font-control');
+            const zoomValue = document.getElementById('zoom-value');
+            const fontValue = document.getElementById('font-value');
+
+            // Toggle settings panel
+            settingsToggle.addEventListener('click', () => {
+                settingsPanel.classList.toggle('open');
+            });
+
+            // Close panel handlers
+            closeSettings.addEventListener('click', () => {
+                settingsPanel.classList.remove('open');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!settingsPanel.contains(e.target) && 
+                    !settingsToggle.contains(e.target)) {
+                    settingsPanel.classList.remove('open');
+                }
+            });
+
+            // Theme handling
+            themeSelector.addEventListener('change', (e) => {
+                const newTheme = e.target.value;
+                
+                // Remove all existing theme classes
+                document.body.classList.remove(
+                    'theme-default', 
+                    'theme-cyberpunk', 
+                    'theme-nature', 
+                    'theme-retro',
+                    'theme-space',
+                    'theme-minimal',
+                    'theme-neon',
+                    'theme-sunset',
+                    'theme-ocean',
+                    'theme-forest'
+                );
+                
+                // Add new theme class
+                document.body.classList.add(`theme-${newTheme}`);
+                
+                // Save theme preference
+                localStorage.setItem('theme', newTheme);
+                
+                // Update particles effect based on theme
+                updateParticlesForTheme(newTheme);
+            });
+
+            function updateParticlesForTheme(theme) {
+                const particleConfigs = {
+                    cyberpunk: {
+                        particles: {
+                            color: { value: "#ff0055" },
+                            number: { value: 100 },
+                            size: { value: 3 }
+                        }
+                    },
+                    neon: {
+                        particles: {
+                            color: { value: "#ff00de" },
+                            number: { value: 80 },
+                            size: { value: 2 }
+                        }
+                    },
+                    // Add more theme-specific particle configurations
+                };
+
+                if (particleConfigs[theme]) {
+                    particlesJS("particles-js", particleConfigs[theme]);
+                }
+            }
+
+            // Dark mode handling
+            darkModeToggle.addEventListener('change', () => {
+                document.body.classList.toggle('light-mode');
+                localStorage.setItem('darkMode', darkModeToggle.checked);
+            });
+
+            // Zoom control
+            zoomControl.addEventListener('input', (e) => {
+                const zoom = e.target.value;
+                document.body.style.zoom = `${zoom}%`;
+                zoomValue.textContent = `${zoom}%`;
+                localStorage.setItem('zoom', zoom);
+            });
+
+            // Font size control
+            fontControl.addEventListener('input', (e) => {
+                const size = e.target.value;
+                document.body.style.fontSize = `${size}px`;
+                fontValue.textContent = `${size}px`;
+                localStorage.setItem('fontSize', size);
+            });
+
+            // Load saved settings
+            const savedTheme = localStorage.getItem('theme');
+            const savedDarkMode = localStorage.getItem('darkMode');
+            const savedZoom = localStorage.getItem('zoom');
+            const savedFontSize = localStorage.getItem('fontSize');
+
+            if (savedTheme) {
+                themeSelector.value = savedTheme;
+                document.body.classList.add(`theme-${savedTheme}`);
+            }
+            if (savedDarkMode === 'true') {
+                darkModeToggle.checked = true;
+                document.body.classList.add('light-mode');
+            }
+            if (savedZoom) {
+                zoomControl.value = savedZoom;
+                document.body.style.zoom = `${savedZoom}%`;
+                zoomValue.textContent = `${savedZoom}%`;
+            }
+            if (savedFontSize) {
+                fontControl.value = savedFontSize;
+                document.body.style.fontSize = `${savedFontSize}px`;
+                fontValue.textContent = `${savedFontSize}px`;
+            }
+        });
     </script>
 </body>
-</html> 
+</html>
