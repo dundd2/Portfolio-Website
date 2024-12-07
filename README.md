@@ -180,3 +180,7 @@ This portfolio website serves as a digital representation of my capabilities and
 - Screen reader support
 - High contrast modes
 - Focus management
+  
+## 📜 License
+
+This project is licensed under the MIT LICENSE.
